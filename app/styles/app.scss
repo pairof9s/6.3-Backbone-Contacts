@@ -12,6 +12,58 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
   box-sizing: border-box;
 }
 
+body {
+  margin: 0 auto;
+  padding: 0;
+  height: 100%;
+  background-image: url('../images/vert-grad.png');
+  color: #666;
+}
+
 img {
   max-width: 100%;
+}
+
+h1 {
+  color: #5BC0DE;
+}
+
+h3 {
+  color: #5BC0DE;
+
+}
+
+h5 {
+}
+
+ul {
+  list-style: none;
+  margin-left: 20px;
+  border: none;
+}
+
+li {
+  margin-bottom: 15px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input {
+  margin-bottom: 6px;
+  border: none;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  background-color: #fafafa;
+  border-radius: 2px;
+}
+
+.button {
+  margin-top: 6px;
+}
+
+.infobox {
+  margin-right: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }

@@ -40,22 +40,6 @@ var ContactFormView = Backbone.View.extend({
   },
 });
 
-var ContactListView = Backbone.View.extend({
-  tagName: 'ul',
-  className: 'list-unstyled col-md-3',
-
-  initialize: function(){
-    this.listenTo(this.collection, 'add', this.renderItem);
-  },
-  render: function(){
-      return this;
-  },
-  renderItem: function(contact){
-    var contactItem = new ContactItemView({model: contact});
-    this.$el.append(contactItem.render().el);
-  },
-});
-
 var ContactItemView = Backbone.View.extend({
   tagName: 'li',
   template: contactListTemplate,
@@ -67,9 +51,25 @@ var ContactItemView = Backbone.View.extend({
   },
 });
 
+var ContactListView = Backbone.View.extend({
+  tagName: 'ul',
+  className: 'list-unstyled col-md-3',
+
+  initialize: function(){
+    this.listenTo(this.collection, 'add', this.renderItem);
+  },
+  render: function(){
+    return this;
+  },
+  renderItem: function(contact){
+    var contactItem = new ContactItemView({model: contact});
+    this.$el.append(contactItem.render().el);
+  },
+});
+
 module.exports = {
   'ContactInstructionView': ContactInstructionView,
   'ContactFormView': ContactFormView,
   'ContactListView': ContactListView,
   'ContactItemView': ContactItemView,
-}
+};
